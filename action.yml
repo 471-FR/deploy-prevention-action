@@ -1,5 +1,5 @@
 # action.yml
-name: Should I deploy today? Github action
+name: deployment-prevention-action
 author: 4.71 Team
 description: Every time you try to deploy we check at shouldideploy.today if this is a good idea.
 inputs:
