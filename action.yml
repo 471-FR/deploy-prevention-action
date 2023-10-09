@@ -1,0 +1,14 @@
+# action.yml
+name: Should I deploy today? Github action
+author: 4.71 Team
+description: Every time you try to deploy we check at shouldideploy.today if this is a good idea.
+inputs:
+  timezone: 
+    description: 'Timezone of your product team'
+    required: True
+    default: 'UTC'
+runs:
+  using: 'composite'
+  steps:
+    - run: python ${{ github.action_path }}/main.py ${{ inputs.timezone }} "${{ github.event.head_commit.message }}"
+      shell: bash

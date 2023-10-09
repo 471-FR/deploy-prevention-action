@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  should_i_deploy:
+    runs-on: ubuntu-latest
+    name: A job to check if you should deploy
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Check if you should deploy
+        uses: timelfrink/shouldideploy-action@v1
+        with:
+          timezone: "Europe/Paris"
